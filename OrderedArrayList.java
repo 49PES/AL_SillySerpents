@@ -24,4 +24,15 @@ public class OrderedArrayList {
     return _data.size();
   }
 
+  void add(int num){
+        boolean isAdded = false;
+        for(int i = 0 ; i < _data.size() && !isAdded; i++ ){
+            if(_data.get(i) >= num){
+                _data.add(i, num);
+                isAdded = true;
+            }
+        }
+        
+        if (!isAdded) _data.add(num);
+    }
 }
